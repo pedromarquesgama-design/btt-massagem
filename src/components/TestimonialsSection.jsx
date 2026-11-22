@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import { BOTANICAL_BG, TESTIMONIALS } from '../data/content'
 import { EditorialReveal, ParallaxOffset } from './MotionPrimitives'
 import { EASE_LUXURY } from '../utils/motion'
+import { AppLink } from '../utils/router'
 
 export function TestimonialsSection() {
   const sectionRef = useRef(null)
@@ -46,7 +47,12 @@ export function TestimonialsSection() {
             Carinho dos <em>clientes</em>
           </h2>
           <p className="testi-summary-line tabular-nums">
-            5,0 de 5 estrelas · Relatos reais de quem confia no trabalho de Eliandro em Porto Seguro
+            5,0 de 5 estrelas · 21 avaliações reais no Google de quem confia na massagem em Porto Seguro com Eliandro
+          </p>
+          <p className="testi-page-cta">
+            <AppLink href="/avaliacoes-porto-seguro" className="btn btn-outline">
+              Ver página de avaliações (5,0 estrelas)
+            </AppLink>
           </p>
         </EditorialReveal>
 

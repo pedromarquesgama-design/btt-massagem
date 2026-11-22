@@ -2,19 +2,24 @@ import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { NAV_LINKS, WHATS_URL } from '../data/content'
+import { AppLink, usePathname } from '../utils/router'
 import { ScrollProgressBar } from './MotionPrimitives'
 import { EASE_LUXURY } from '../utils/motion'
 
 export function Header() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const sectionIds = NAV_LINKS.map((link) => link.href.replace('#', ''))
+    const sectionIds = NAV_LINKS.filter((link) => link.href.includes('#')).map(
+      (link) => link.href.split('#')[1],
+    )
 
     const onScroll = () => {
-      setScrolled(window.scrollY > 48)
+      setScrolled(window.scrollY > 48 || pathname !== '/')
+      if (pathname !== '/') return
       const triggerY = Math.min(260, window.innerHeight * 0.32)
       let current = ''
       for (const id of sectionIds) {
@@ -22,7 +27,7 @@ export function Header() {
         if (!el) continue
         const rect = el.getBoundingClientRect()
         if (rect.top <= triggerY && rect.bottom > 100) {
-          current = `#${id}`
+          current = `/#${id}`
         }
       }
       setActiveSection(current)
@@ -31,7 +36,9 @@ export function Header() {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [pathname])
+
+  const currentNav = pathname === '/' ? activeSection : pathname
 
   useEffect(() => {
     if (!mobileOpen) return undefined
@@ -48,7 +55,7 @@ export function Header() {
       id="header"
     >
       <div className="header-inner">
-        <a className="brand-lockup" href="#top" aria-label="Eliandro Rodrigues — Início">
+        <AppLink className="brand-lockup" href="/" aria-label="Eliandro Rodrigues — Início">
           <img
             className="nav-logo"
             src="/logo-snipe.png"
@@ -57,20 +64,22 @@ export function Header() {
             referrerPolicy="no-referrer"
           />
           <span className="brand-wordmark">Eliandro Rodrigues</span>
-        </a>
+        </AppLink>
 
         <nav className="desktop-nav" aria-label="Navegação principal">
           {NAV_LINKS.map((link) => {
-            const isActive = activeSection === link.href
+            const isActive =
+              currentNav === link.href ||
+              (link.href === '/blog' && pathname.startsWith('/blog'))
             return (
-              <a
+              <AppLink
                 className={`nav-link ${isActive ? 'is-active' : ''}`}
                 key={link.href}
                 href={link.href}
-                aria-current={isActive ? 'location' : undefined}
+                aria-current={isActive ? 'page' : undefined}
               >
                 {link.label}
-              </a>
+              </AppLink>
             )
           })}
         </nav>
@@ -111,14 +120,14 @@ export function Header() {
             transition={{ duration: 0.25, ease: EASE_LUXURY }}
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <AppLink
                 key={link.href}
                 href={link.href}
                 className="mobile-nav-link"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
-              </a>
+              </AppLink>
             ))}
             <a
               className="btn btn-gold mobile-nav-cta"

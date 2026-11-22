@@ -18,16 +18,19 @@ export function FounderSection() {
           <EditorialReveal delay={0.12}>
             <div className="founder-prose">
               <p>
-                Eliandro Rodrigues, 47 anos, é massoterapeuta profissional e
-                especialista em massagens relaxantes e terapêuticas em Porto
-                Seguro.
+                Eliandro Rodrigues, 47 anos, é massoterapeuta em Porto Seguro,
+                BA, especialista em massagem relaxante, massagem terapêutica e
+                massagem desportiva para moradores e visitantes do Centro,
+                Arraial d’Ajuda, Trancoso e Caraíva.
               </p>
               <p>
                 Sua trajetória nas artes marciais — Jiu-Jitsu, Boxe e MMA —
-                moldou uma leitura precisa da anatomia em movimento. Com técnica
-                apurada e cuidado humano em cada atendimento, proporciona alívio
-                real das tensões, recuperação profunda e uma experiência
-                renovadora para cada cliente.
+                moldou uma leitura precisa da anatomia em movimento, tornando o
+                estúdio referência em massagem para jiu-jitsu, recuperação
+                muscular e alívio real das tensões. Também realizamos protocolos
+                complementares como reflexologia podal, massagem com pedras
+                quentes e atendimento como massagista a domicílio em Porto
+                Seguro sob consulta.
               </p>
             </div>
           </EditorialReveal>
@@ -44,7 +47,7 @@ export function FounderSection() {
               </div>
               <div className="founder-pillar">
                 <dt>Avaliação</dt>
-                <dd className="tabular-nums">5,0 no Google</dd>
+                <dd className="tabular-nums">5,0 · 21 avaliações</dd>
               </div>
             </dl>
           </EditorialReveal>

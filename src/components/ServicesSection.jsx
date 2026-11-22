@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { SERVICE_CATEGORIES, SERVICES } from '../data/content'
 import { buildWhatsAppUrl, filterServices } from '../utils/booking'
 import { EASE_LUXURY } from '../utils/motion'
+import { AppLink } from '../utils/router'
 import { EditorialReveal, ParallaxMedia } from './MotionPrimitives'
 import { WhatsOutline } from './SocialIcons'
 
@@ -129,22 +130,35 @@ export function ServicesSection({ completedPrepCount, totalPrepCount }) {
                     <span className="tabular-nums">{service.duration}</span>
                   </div>
 
-                  <h3 className="service-title">{service.name}</h3>
+                  <h3 className="service-title">
+                    <AppLink href={service.slug} className="service-title-link">
+                      {service.name}
+                    </AppLink>
+                  </h3>
                   <p className="service-summary">{service.summary}</p>
 
                   <div className="service-footer">
                     <span className="service-price tabular-nums">
                       {service.price}
                     </span>
-                    <button
-                      type="button"
-                      className="service-action-btn"
-                      onClick={() => openService(service)}
-                      aria-label={`Ver detalhes e agendar ${service.name}`}
-                    >
-                      <span>Detalhes e agendar</span>
-                      <ArrowUpRight size={15} aria-hidden="true" />
-                    </button>
+                    <div className="service-footer-actions">
+                      <AppLink
+                        href={service.slug}
+                        className="service-page-link"
+                        aria-label={`Saiba mais sobre ${service.name} em Porto Seguro`}
+                      >
+                        Saiba mais
+                      </AppLink>
+                      <button
+                        type="button"
+                        className="service-action-btn"
+                        onClick={() => openService(service)}
+                        aria-label={`Ver detalhes e agendar ${service.name}`}
+                      >
+                        <span>Agendar</span>
+                        <ArrowUpRight size={15} aria-hidden="true" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </motion.article>

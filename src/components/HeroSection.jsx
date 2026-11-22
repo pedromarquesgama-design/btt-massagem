@@ -99,7 +99,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.44, ease: EASE_LUXURY }}
           >
-            Investigando a dor, <em>devolvendo o seu bem-estar.</em>
+            Massagem em Porto Seguro: <em>investigando a dor, devolvendo o seu bem-estar.</em>
           </motion.h1>
 
           <motion.div

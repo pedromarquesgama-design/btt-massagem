@@ -16,10 +16,11 @@ export const WHATS_URL = 'https://wa.me/5573999917430'
 export const BOTANICAL_BG = botanicalSanctuaryBg
 
 export const NAV_LINKS = [
-  { label: 'Sobre', href: '#about' },
-  { label: 'Serviços', href: '#services' },
-  { label: 'Pré-Atendimento', href: '#guia' },
-  { label: 'Contato', href: '#contact' },
+  { label: 'Sobre', href: '/#about' },
+  { label: 'Serviços', href: '/#services' },
+  { label: 'Avaliações', href: '/avaliacoes-porto-seguro' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contato', href: '/#contact' },
 ]
 
 export const SERVICE_CATEGORIES = [
@@ -32,6 +33,7 @@ export const SERVICE_CATEGORIES = [
 export const SERVICES = [
   {
     id: 'terapeutica',
+    slug: '/massagem-terapeutica-porto-seguro',
     number: '01',
     name: 'Massagem Terapêutica',
     category: 'terapeutica',
@@ -39,9 +41,9 @@ export const SERVICES = [
     duration: '60 min',
     price: 'R$ 169,90',
     image: '/bem-estar-2.jpg',
-    imageAlt: 'Sessão de massagem terapêutica focada em ombros e coluna',
+    imageAlt: 'Massagem terapêutica em Porto Seguro focada em ombros e coluna',
     summary:
-      'Manobras profundas e direcionadas para investigar a origem da dor muscular, desatar nódulos persistentes e restaurar a mobilidade articular.',
+      'Manobras profundas e direcionadas para investigar a origem da dor muscular, desatar nódulos persistentes e restaurar a mobilidade articular em Porto Seguro.',
     benefits: [
       'Alívio efetivo de dores lombares, cervicais e escapulares',
       'Redução de contraturas crônicas e sobrecarga postural',
@@ -51,6 +53,7 @@ export const SERVICES = [
   },
   {
     id: 'relaxante',
+    slug: '/massagem-relaxante-porto-seguro',
     number: '02',
     name: 'Massagem Relaxante',
     category: 'relaxamento',
@@ -58,7 +61,7 @@ export const SERVICES = [
     duration: '60 min',
     price: 'R$ 169,90',
     image: '/bem-estar-1.jpg',
-    imageAlt: 'Cliente em profundo relaxamento durante sessão de massagem à luz de velas',
+    imageAlt: 'Massagem relaxante em Porto Seguro à luz de velas no estúdio de Eliandro Rodrigues',
     summary:
       'Ritmo fluido, toque contínuo e pressão equilibrada que desaceleram o sistema nervoso, dissolvem o estresse mental e devolvem leveza ao corpo.',
     benefits: [
@@ -70,6 +73,7 @@ export const SERVICES = [
   },
   {
     id: 'ventosaterapia',
+    slug: '/ventosaterapia-porto-seguro',
     number: '03',
     name: 'Ventosaterapia',
     category: 'terapeutica',
@@ -77,7 +81,7 @@ export const SERVICES = [
     duration: '50 min',
     price: 'R$ 169,90',
     image: ventosaterapiaImg,
-    imageAlt: 'Aplicação profissional de ventosas de vidro nas costas em estúdio acolhedor',
+    imageAlt: 'Ventosaterapia em Porto Seguro com aplicação profissional de ventosas nas costas',
     summary:
       'Terapia por sucção controlada que descomprime os tecidos profundos, estimula a oxigenação sanguínea e acelera a eliminação de toxinas musculares.',
     benefits: [
@@ -89,6 +93,7 @@ export const SERVICES = [
   },
   {
     id: 'desportiva',
+    slug: '/massagem-desportiva-porto-seguro',
     number: '04',
     name: 'Massagem Desportiva',
     category: 'desportiva',
@@ -96,7 +101,7 @@ export const SERVICES = [
     duration: '60 min',
     price: 'R$ 169,90',
     image: '/massagem-na-praia.jpg',
-    imageAlt: 'Eliandro Rodrigues realizando atendimento de massagem ao ar livre em Porto Seguro',
+    imageAlt: 'Massagem desportiva em Porto Seguro realizada pelo massoterapeuta Eliandro Rodrigues',
     summary:
       'Protocolo técnico desenvolvido com vivência em Jiu-Jitsu, Boxe e MMA para preparar a musculatura, prevenir lesões e otimizar a recuperação atlética.',
     benefits: [
@@ -108,6 +113,7 @@ export const SERVICES = [
   },
   {
     id: 'shiatsu',
+    slug: '/shiatsu-porto-seguro',
     number: '05',
     name: 'Shiatsu',
     category: 'relaxamento',
@@ -115,7 +121,7 @@ export const SERVICES = [
     duration: '60 min',
     price: 'R$ 169,90',
     image: shiatsuImg,
-    imageAlt: 'Técnica japonesa de Shiatsu aplicada com pressão precisa dos polegares',
+    imageAlt: 'Shiatsu em Porto Seguro aplicado com pressão precisa dos polegares nos meridianos',
     summary:
       'Técnica oriental de pressão rítmica com os dedos e palmas sobre os meridianos energéticos, harmonizando corpo, respiração e postura.',
     benefits: [
@@ -127,6 +133,7 @@ export const SERVICES = [
   },
   {
     id: 'miofascial',
+    slug: '/liberacao-miofascial-porto-seguro',
     number: '06',
     name: 'Liberação Miofascial',
     category: 'desportiva',
@@ -134,7 +141,7 @@ export const SERVICES = [
     duration: '60 min',
     price: 'R$ 169,90',
     image: miofascialImg,
-    imageAlt: 'Liberação miofascial terapêutica aplicada nos ombros e região dorsal',
+    imageAlt: 'Liberação miofascial em Porto Seguro aplicada nos ombros e região dorsal',
     summary:
       'Manipulação lenta e precisa da fáscia muscular para dissolver aderências profundas, liberar pontos-gatilho e devolver fluidez aos movimentos.',
     benefits: [
@@ -143,6 +150,26 @@ export const SERVICES = [
       'Sensação duradoura de soltura muscular',
     ],
     indication: 'Voltada para travamentos musculares, atletas e dores crônicas resistentes.',
+  },
+  {
+    id: 'drenagem',
+    slug: '/drenagem-linfatica-porto-seguro',
+    number: '07',
+    name: 'Drenagem Linfática',
+    category: 'relaxamento',
+    categoryLabel: 'Bem-Estar',
+    duration: '60 min',
+    price: 'R$ 169,90',
+    image: '/bem-estar-1.jpg',
+    imageAlt: 'Drenagem linfática em Porto Seguro para redução de inchaço e retenção de líquidos',
+    summary:
+      'Manobras suaves e rítmicas direcionadas ao sistema linfático para reduzir inchaço, aliviar pernas cansadas e melhorar a circulação.',
+    benefits: [
+      'Redução visível da retenção de líquidos e inchaço',
+      'Alívio imediato da sensação de peso nas pernas',
+      'Estímulo natural da circulação linfática e bem-estar',
+    ],
+    indication: 'Indicada para retenção hídrica, pós-viagem, cansaço nas pernas e autocuidado em Porto Seguro.',
   },
 ]
 

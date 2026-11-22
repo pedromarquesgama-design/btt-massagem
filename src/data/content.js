@@ -17,6 +17,7 @@ export const BOTANICAL_BG = botanicalSanctuaryBg
 
 export const NAV_LINKS = [
   { label: 'Sobre', href: '/#about' },
+  { label: 'Espaço', href: '/#espaco' },
   { label: 'Serviços', href: '/#services' },
   { label: 'Avaliações', href: '/avaliacoes-porto-seguro' },
   { label: 'Blog', href: '/blog' },
@@ -172,6 +173,37 @@ export const SERVICES = [
     indication: 'Indicada para retenção hídrica, pós-viagem, cansaço nas pernas e autocuidado em Porto Seguro.',
   },
 ]
+
+export const STUDIO_MEDIA = {
+  videoSrc: '/espaco-tour.mp4',
+  videoPoster: '/espaco-ambiente.jpg',
+  photos: [
+    {
+      id: 'ambiente',
+      src: '/espaco-ambiente.jpg',
+      alt: 'Estúdio climatizado de massagem em Porto Seguro com iluminação quente e projeção relaxante',
+      kicker: '01 · Clima & Luz',
+      title: 'Iluminação sensorial',
+      caption: 'Sala climatizada com luz quente suave e projeção relaxante para desacelerar logo na chegada.',
+    },
+    {
+      id: 'maca',
+      src: '/espaco-maca.jpg',
+      alt: 'Maca ergonômica acolchoada no novo espaço climatizado de massoterapia em Porto Seguro',
+      kicker: '02 · Conforto',
+      title: 'Maca preparada a cada sessão',
+      caption: 'Enxoval macio, apoio facial ergonômico e higienização rigorosa entre todos os atendimentos.',
+    },
+    {
+      id: 'instrumentos',
+      src: '/espaco-instrumentos.jpg',
+      alt: 'Toalhas limpas, ventosas, pedras quentes e acessórios de liberação miofascial no estúdio em Porto Seguro',
+      kicker: '03 · Arsenal Terapêutico',
+      title: 'Instrumentos completos',
+      caption: 'Ventosas, pedras quentes, bambus, raspadores miofasciais, óleos selecionados e toalhas macias.',
+    },
+  ],
+}
 
 export const WELLNESS_PILLARS = [
   {

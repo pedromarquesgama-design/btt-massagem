@@ -15,6 +15,7 @@ import { Header } from './components/Header'
 import { HeroSection } from './components/HeroSection'
 import { ScrubbedManifesto } from './components/MotionPrimitives'
 import { FounderSection } from './components/FounderSection'
+import { StudioSection } from './components/StudioSection'
 import { WellnessSection } from './components/WellnessSection'
 import { ServicesSection } from './components/ServicesSection'
 import { PreSessionSection } from './components/PreSessionSection'
@@ -157,6 +158,7 @@ export default function App() {
                 />
 
                 <FounderSection />
+                <StudioSection />
                 <WellnessSection />
                 <ServicesSection
                   completedPrepCount={checkedPrepIds.length}
